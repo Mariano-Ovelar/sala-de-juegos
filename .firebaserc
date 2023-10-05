@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "sala-de-juegos-2023-bbf8a"
+  },
+  "targets": {
+    "sala-de-juegos-2023-bbf8a": {
+      "hosting": {
+        "sala-de-juegos": [
+          "sala-de-juegos-2023-bbf8a"
+        ]
+      }
+    }
+  }
+}
