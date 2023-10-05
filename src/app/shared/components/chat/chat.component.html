@@ -18,7 +18,7 @@
     </div>
   </div>
   <div #messagesBox class="mensaje-container scroll-window">
-    <div *ngFor="let message of messages" class="mensaje">
+    <div *ngFor="let message of chatService.mensajes" class="mensaje">
       <div
         [ngClass]="{
           'message-bubble': true,
@@ -27,7 +27,7 @@
       >
         <p class="userName">
           <b>
-            {{ message.user?.name }}
+            {{ message.user?.displayName }}
           </b>
         </p>
         <p>

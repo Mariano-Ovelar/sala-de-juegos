@@ -18,9 +18,8 @@ export class ChatComponent {
   constructor(public chatService: ChatService, public userSrv: AuthService) {}
 
   ngOnInit(): void {
-    this.chatService.getMessages().then((res) => {
-      this.messages = res;
-    });
+    this.chatService.getMessages();
+    /* this.messages = res; */
   }
   hideChat() {
     this.isChatVisible = !this.isChatVisible;

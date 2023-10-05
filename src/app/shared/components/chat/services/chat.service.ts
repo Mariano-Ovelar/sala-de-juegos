@@ -3,8 +3,7 @@ import {
   Firestore,
   collection,
   addDoc,
-  collectionData,
-  getDocs,
+  onSnapshot,
 } from '@angular/fire/firestore';
 
 import { Observable } from 'rxjs';
@@ -14,12 +13,18 @@ import { Mensaje } from 'src/app/core/models/mensaje';
 })
 export class ChatService {
   private path: string = 'mensajes';
-  messagesRef = collection(this.firestore, this.path);
-  constructor(private firestore: Firestore, private db: Firestore) {}
+  public mensajes: any[] = [];
+  unsub: any;
+  messagesRef = collection(this.db, this.path);
+  constructor(private db: Firestore) {}
 
-  async getMessages() {
-    const todoRef = collection(this.db, 'todos');
-    return await getDocs(todoRef);
+  getMessages() {
+    let men = [];
+    this.unsub = onSnapshot(this.messagesRef, (snapshot) => {
+      snapshot.docChanges().forEach((valor) => {
+        this.mensajes.push(valor.doc.data());
+      });
+    });
   }
   addMessage(message: Mensaje) {
     return addDoc(this.messagesRef, message);
