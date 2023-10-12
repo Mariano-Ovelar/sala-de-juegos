@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class ChatComponent {
   showChat = false;
-  messages: any;
+  messages: any[] = [];
   @ViewChild('messagesBox') messagesBox!: ElementRef;
   isChatVisible: boolean = false;
   newMessage: string = '';
@@ -19,10 +19,13 @@ export class ChatComponent {
 
   ngOnInit(): void {
     this.chatService.getMessages();
-    /* this.messages = res; */
+    setTimeout(() => {
+      this.scrollChat();
+    }, 4000);
   }
   hideChat() {
     this.isChatVisible = !this.isChatVisible;
+    this.scrollChat();
   }
 
   scrollChat() {
@@ -30,6 +33,7 @@ export class ChatComponent {
       if (!this.messagesBox) return;
       const div = this.messagesBox.nativeElement;
       div.scrollTop = div.scrollHeight;
+      div;
     }, 10);
   }
 
@@ -48,27 +52,28 @@ export class ChatComponent {
         .reverse()
         .join('-')} ${hora}`;
 
+      let user = {
+        name: this.userSrv.user.displayName,
+        email: this.userSrv.user.email,
+        uid: this.userSrv.user.uid,
+      };
       let message = {
         message: this.newMessage,
-        user: this.userSrv.user,
+        user: user,
         fullDate: fullDate,
         date: dayAndMonth,
         hora: hora,
       };
-      this.chatService.addMessage(message);
+
+      console.log(message);
+      this.chatService.addMessage(message).then();
       this.newMessage = '';
+      this.scrollChat();
     }
   }
-
-  /* get message() {
-    return this.formChat.controls['message'];
-  } */
+  ngOnDestroy() {
+    if (this.chatService.unsub) {
+      this.chatService.unsub();
+    }
+  }
 }
-/* res.sort((a, b) => {
-        let fecha1 = new Date(a.fullDate);
-        let fecha2 = new Date(b.fullDate);
-
-        if (fecha1 === fecha2) return 0;
-        return fecha1 > fecha2 ? 1 : -1;
-      });
- */

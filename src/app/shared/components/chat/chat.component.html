@@ -27,10 +27,10 @@
       >
         <p class="userName">
           <b>
-            {{ message.user?.displayName }}
+            {{ message.user.name }}
           </b>
         </p>
-        <p>
+        <p class="mensaje">
           {{ message.message }}
         </p>
         <p class="time">{{ message.hora }}</p>
@@ -43,6 +43,8 @@
       (keyup.enter)="onSubmit()"
       placeholder="Escribe un mensaje"
     />
-    <button (click)="onSubmit()">Enviar</button>
+    <button type="button" class="btn btn-success" (click)="onSubmit()">
+      Enviar
+    </button>
   </div>
 </div>

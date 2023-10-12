@@ -1,5 +1,4 @@
 import { inject, Injectable } from '@angular/core';
-import { User } from '../models/user';
 import {
   Auth,
   createUserWithEmailAndPassword,
@@ -9,6 +8,7 @@ import {
   signOut,
   updateProfile,
 } from '@angular/fire/auth';
+import { User } from '../models/user';
 import { UtilsService } from './utils.service';
 import { Observable } from 'rxjs';
 import { FirebaseService } from './firebase.service';

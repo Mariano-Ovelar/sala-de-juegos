@@ -42,9 +42,27 @@ export class Alert {
   ) {
     return Swal.fire({
       title: title,
-      icon: 'warning',
       showCancelButton: true,
       text: text,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: confirmButtonText,
+    });
+  }
+
+  static mensajeFinDelJuego(
+    title: string,
+    text: string,
+    confirmButtonText: string
+  ) {
+    return Swal.fire({
+      title: title,
+      text: text,
+      imageUrl: '../../../assets/img/game-over.png',
+      imageWidth: 400,
+      imageHeight: 400,
+      imageAlt: 'Custom image',
+      showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: confirmButtonText,

@@ -2,7 +2,6 @@ export interface IUser {
   uid: string;
   name: string;
   email: string;
-  rol: string;
   password?: string;
 }
 
@@ -10,7 +9,6 @@ export class User implements IUser {
   uid: string = '';
   name: string = '';
   email: string = '';
-  rol: string = '';
   password?: string = '';
 
   public static GetLoggedUser(listaUser: any[], user: any) {

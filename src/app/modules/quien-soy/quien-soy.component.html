@@ -1,23 +1,26 @@
-<main class="container">
-  <div class="card">
-    <div class="text-center">
-      <h1><u> Mis datos </u></h1>
-      <img
-        class="profile-img"
-        [src]="datosPersona.avatar_url"
-        alt="Profile Image"
-      />
-      <div class="name">{{ datosPersona.name }}</div>
-    </div>
-    <div class=""><b> Frontend Developer </b></div>
-    <div class="contact">
-      <div>Ubicación: {{ datosPersona.location }}</div>
-      <div>Seguidores: {{ datosPersona.followers }}</div>
-      <div>Seguidos: {{ datosPersona.following }}</div>
-      <div>
-        Para mas informacion haga
-        <a [href]="datosPersona.html_url" target="_blank">click aqui.</a>
+<div>
+  <main class="container">
+    <div class="card">
+      <div class="text-center">
+        <h1><u> Mis datos </u></h1>
+        <img
+          class="profile-img"
+          [src]="datosPersona.avatar_url"
+          alt="Profile Image"
+        />
+        <div class="name">{{ datosPersona.name }}</div>
+      </div>
+      <div class=""><b> Frontend Developer </b></div>
+      <div class="contact">
+        <div>Ubicación: {{ datosPersona.location }}</div>
+        <div>Seguidores: {{ datosPersona.followers }}</div>
+        <div>Seguidos: {{ datosPersona.following }}</div>
+        <div>
+          Para mas informacion haga
+          <a [href]="datosPersona.html_url" target="_blank">click aqui.</a>
+        </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
+  <app-info-juegos></app-info-juegos>
+</div>

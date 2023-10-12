@@ -1,0 +1,46 @@
+img {
+  width: 100%;
+  max-width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  margin: 0;
+}
+.contenedor-cartas {
+  background-image: url("../../../../../assets/img/cartas/tapete2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  width: 100%;
+  height: 800px;
+  padding: 0;
+  border: 1px solid black;
+}
+.info {
+  width: 100%;
+  height: 450px;
+  margin: 10px;
+}
+button {
+  width: 100%;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 80px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+.col-4 {
+  margin: 0;
+}
+p {
+  font-weight: bold;
+  font-size: 80px;
+  color: rgb(255, 255, 255);
+}
