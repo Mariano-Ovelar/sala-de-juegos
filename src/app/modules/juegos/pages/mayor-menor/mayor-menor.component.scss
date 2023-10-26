@@ -25,6 +25,11 @@ img {
   height: 450px;
   margin: 10px;
 }
+p {
+  font-weight: bold;
+  font-size: 80px;
+  color: rgb(255, 255, 255);
+}
 button {
   width: 100%;
   margin: 10px 0;
@@ -38,9 +43,4 @@ button {
 }
 .col-4 {
   margin: 0;
-}
-p {
-  font-weight: bold;
-  font-size: 80px;
-  color: rgb(255, 255, 255);
 }

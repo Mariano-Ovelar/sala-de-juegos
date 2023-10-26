@@ -1,1 +1,33 @@
-<p>preguntados works!</p>
+<!-- 
+<div class="container">
+  <div *ngIf="pokemonElegido">
+    <img [src]="pokemonElegido.img" alt="" />
+    <div *ngFor="let item of listaPokemon">
+      <button class="btn btn-primary" (click)="responder(item.name)">
+        {{ item.name }}
+      </button>
+    </div>
+  </div>
+</div>
+ -->
+<div class="container row">
+  <div class="portal col-6">
+    <div class="">
+      <img [src]="respuesta.image" alt="" />
+    </div>
+  </div>
+  <div class="col info">
+    <p>¿Como se llama este personaje?</p>
+
+    <div *ngFor="let item of listaOpciones">
+      <button
+        class="btn btn-primary"
+        (click)="responde(item)"
+        [ngClass]="{ disabled: botonBloqueado }"
+      >
+        {{ item.name }}
+      </button>
+    </div>
+    <p>Puntuacion: {{ puntuacion }}</p>
+  </div>
+</div>

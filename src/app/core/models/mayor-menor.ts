@@ -1,7 +1,7 @@
-import { UtilsService } from '../../services/utils.service';
-import { Alert } from '../alert';
-import { Carta } from './carta';
-import { Mazo } from './mazo';
+import { UtilsService } from '../services/utils.service';
+import { Alert } from './alert';
+import { Carta } from './cartas/carta';
+import { Mazo } from './cartas/mazo';
 
 export class MayorMenor {
   mazo: Mazo;
@@ -12,6 +12,17 @@ export class MayorMenor {
   cartasMostradas: Carta[] = [];
   constructor() {
     this.reiniciarJuego();
+  }
+  reiniciarJuego() {
+    this.mazo = new Mazo('12');
+    this.cartaActual = this.mazo.seleccionarCarta();
+    this.cartaActual.bocaArriba = true;
+    this.siguienteCarta = this.mazo.seleccionarCarta();
+    this.juegoTerminado = false;
+    this.puntaje = 0;
+    this.cartasMostradas = [];
+    this.cartasMostradas.push(this.cartaActual);
+    this.cartasMostradas.push(this.siguienteCarta);
   }
 
   compararRespuesta(respuesta: string) {
@@ -38,17 +49,5 @@ export class MayorMenor {
       }
     }
     return this.juegoTerminado;
-  }
-
-  reiniciarJuego() {
-    this.mazo = new Mazo();
-    this.cartaActual = this.mazo.seleccionarCarta();
-    this.cartaActual.bocaArriba = true;
-    this.siguienteCarta = this.mazo.seleccionarCarta();
-    this.juegoTerminado = false;
-    this.puntaje = 0;
-    this.cartasMostradas = [];
-    this.cartasMostradas.push(this.cartaActual);
-    this.cartasMostradas.push(this.siguienteCarta);
   }
 }

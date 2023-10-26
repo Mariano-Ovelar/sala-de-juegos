@@ -18,7 +18,7 @@ export class HomeComponent {
       link: '/juegos/mayor-menor',
     },
     {
-      img: '../../../assets/img/imagen-juegos/preguntados.png',
+      img: '../../../assets/img/preguntados/images.png',
       nombre: 'PREGUNTADOS',
       link: '/juegos/preguntados',
     },

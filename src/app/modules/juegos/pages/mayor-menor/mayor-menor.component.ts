@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Alert } from 'src/app/core/models/alert';
-import { Carta } from 'src/app/core/models/mayor-menor/carta';
-import { MayorMenor } from 'src/app/core/models/mayor-menor/mayor-menor';
+import { Carta } from 'src/app/core/models/cartas/carta';
+import { MayorMenor } from 'src/app/core/models/mayor-menor';
 import { UtilsService } from 'src/app/core/services/utils.service';
 
 @Component({
